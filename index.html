@@ -1,34 +1,79 @@
-<!-- index.html -->
-<!-- main html file of maps contact form pro  -->
-<!-- a professional google maps contact form pro from autobahn81.com -->
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+<style>
+      html, body, #map_canvas {
+        height: 70%;
+        margin: 0px;
+        padding: 0px
+      }
+      .controls {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #pac-input {
+        background-color: #fff;
+        padding: 0 11px 0 13px;
+        width: 400px;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        text-overflow: ellipsis;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+        margin-left: -1px;
+        padding-left: 14px;  /* Regular padding-left + 1. */
+        width: 401px;
+      }
+
+      .pac-container {
+        font-family: Roboto;
+      }
+
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 300;
+		text-transform: uppercase
+      }
+}
+
     </style>
-    <title>Carte Scoutisme Français</title>
+  <title>Mapped contact form pro</title>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script><!-- remote include the google maps api -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js"></script><!-- remote include jquery -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.6/jquery.validate.min.js"></script><!-- remote include the jquery validation plugin -->
+  <script src="dependencies/jquery.form.js" ></script><!-- include the jquery form plugin -->
+  <script src="js/mappedcontactformpro.js"></script><!-- include the mapped contact form javascript -->
+  <script src="js/config.js"></script><!-- include the mapped contact form config file -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" /><!-- include the stylesheet -->
 
-  <!-- include in your head -->
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><!-- remote include the google maps api -->
-  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js"></script><!-- remote include jquery -->
-  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.6/jquery.validate.min.js"></script><!-- remote include the jquery validation plugin -->
-  <script type="text/javascript" src="dependencies/jquery.form.min.js" ></script><!-- include the jquery form plugin -->
-  <script type="text/javascript" src="searchbox.js" ></script>
-  <script type="text/javascript" charset="utf-8" src="js/mappedcontactformpro.min.js"></script><!-- include the mapped contact form javascript -->
-  <script type="text/javascript" charset="utf-8" src="js/config.js"></script><!-- include the mapped contact form config file -->
-
-    <link rel="stylesheet" href="css/style.css"/><!-- include the stylesheet -->
-  <!-- include in your head end-->
-</head>
-<!-- change your beginning body tag -->
-<body onload="mappedContactForm.initialize()">
-<!-- change your beginning body tag end -->
-
-	<!-- include in your body -->
-	<!-- change the size of the map by editing the width and height values -->
-  <div id="map_canvas" style="width: 100%; height: 640px"></div>
-  	<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-	<!-- include in your body -->
+    <style>
+      #target {
+        width: 345px;
+      }
+    </style>
+  </head>
+  <body onload="mappedContactForm.initialize()">
+    <input id="pac-input" class="controls" type="text" placeholder="Rechercher">
+	<div id="map_canvas" style="width: 100%; height: 680px"></div>
 </body>
 </html>
